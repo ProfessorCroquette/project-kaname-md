@@ -1,0 +1,130 @@
+<section id="home" class="hero">
+	<h1>There is always a thought that leads to more questions.</h1>
+	<p>
+		Project Kaname is a personal site where I share my philosophical analysis of pieces of media.
+	</p>
+</section>
+
+<section id="latest-analyses" class="section">
+	<div class="container">
+		<h2>Latest Analyses</h2>
+	</div>
+</section>
+
+<section id="about" class="section">
+	<div class="container">
+		<h2>About</h2>
+		<p>
+			My name is Professor Croquette, I am an amateur philosopher, programmer, and currently
+			studying in informatics engineering. This site is made for me to post some essays, interesting
+			thoughts and reflections on pieces of media like musics, videos, lyrics and many more.
+		</p>
+	</div>
+</section>
+
+<section id="contact" class="section">
+	<div class="container">
+		<h2>Contact</h2>
+		<p>
+			If you are interested in sharing media that I would like to analyze, feel free to reach me on
+			the contacts below.
+		</p>
+
+		<div class="button-group">
+			<a class="btn" href="mailto:shiro.argentum@gmail.com">Email</a>
+			<a
+				class="btn"
+				href="https://github.com/ProfessorCroquette"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				GitHub
+			</a>
+		</div>
+	</div>
+</section>
+
+<style>
+	.hero {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		min-height: 80vh;
+		padding: var(--space-xl) var(--space-lg);
+		background-color: #0f0c1d;
+		background-image:
+			linear-gradient(rgba(15, 12, 29, 0.7), rgba(15, 12, 29, 0.9)), url('/madoka.gif');
+		background-size: cover;
+		background-position: center;
+		border-bottom: 1px solid var(--border);
+	}
+	.hero h1 {
+		max-width: 20ch;
+		margin-bottom: var(--space-md);
+		text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+	}
+	.hero p {
+		max-width: 55ch;
+		font-size: 1.1rem;
+		color: #cfcaf0;
+		margin-bottom: 0;
+	}
+	.home-card {
+		background-color: var(--surface);
+		border: 1px solid var(--border);
+		border-radius: var(--radius);
+		padding: var(--space-lg);
+		transition:
+			transform 0.2s ease,
+			border-color 0.2s ease;
+	}
+	.home-card:hover {
+		transform: translateY(-2px);
+		border-color: var(--accent);
+	}
+	.home-card h3 {
+		margin-bottom: var(--space-sm);
+	}
+	.home-card a {
+		color: var(--text);
+		text-decoration: none;
+	}
+	.home-card a:hover {
+		color: var(--accent-hover);
+	}
+	.meta {
+		font-family: var(--font-mono);
+		font-size: 0.85rem;
+		color: var(--text-soft);
+		margin-bottom: var(--space-sm);
+	}
+	.home-card p:last-child {
+		margin-bottom: 0;
+	}
+	.button-group {
+		display: flex;
+		gap: var(--space-md);
+		margin-top: var(--space-lg);
+	}
+	.btn {
+		display: inline-block;
+		padding: var(--space-sm) var(--space-lg);
+		font-family: var(--font-heading);
+		font-size: 0.85rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		color: var(--accent);
+		background-color: transparent;
+		border: 1px solid var(--accent);
+		border-radius: var(--radius);
+		transition: all 0.2s ease;
+	}
+	.btn:hover {
+		background-color: var(--accent);
+		color: var(--on-accent);
+		transform: translateY(-2px);
+	}
+</style>

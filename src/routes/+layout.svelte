@@ -32,9 +32,7 @@
 			<li><a href={resolve('/#about')} onclick={() => (menuOpen = false)}>About</a></li>
 			<li><a href={resolve('/#contact')} onclick={() => (menuOpen = false)}>Contact</a></li>
 			<li>
-				<a href={`${resolve('/kaname/analyses')}/`} onclick={() => (menuOpen = false)}
-					>Analyses</a
-				>
+				<a href={`${resolve('/kaname/analyses')}/`} onclick={() => (menuOpen = false)}>Analyses</a>
 			</li>
 		</ul>
 	</nav>

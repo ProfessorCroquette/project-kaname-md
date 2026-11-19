@@ -1,5 +1,9 @@
 <script lang="ts">
-	import { asset } from '$app/paths';
+	import { asset, resolve } from '$app/paths';
+	import { analyses } from './analyses';
+
+	const latestAnalyses = analyses.slice(0, 3);
+	const analysisDetailPath = `${resolve('/kaname/analyses')}/`;
 </script>
 
 <section id="home" class="hero" style={`--hero-image: url("${asset('madoka.gif')}")`}>
@@ -12,6 +16,24 @@
 <section id="latest-analyses" class="section">
 	<div class="container">
 		<h2>Latest Analyses</h2>
+		{#if latestAnalyses.length > 0}
+			<div class="latest-grid">
+				{#each latestAnalyses as analysis (analysis.id)}
+					<article class="home-card">
+						<h3>
+							<a href={`${analysisDetailPath}${analysis.id}/`}>{analysis.title}</a>
+						</h3>
+						<p class="meta">
+							{new Date(analysis.date).toLocaleDateString()} · {analysis.category}
+						</p>
+						<p>{analysis.description}</p>
+					</article>
+				{/each}
+			</div>
+			<a class="latest-link" href={`${resolve('/kaname/analyses')}/`}>View all analyses</a>
+		{:else}
+			<p>No analyses have been published yet.</p>
+		{/if}
 	</div>
 </section>
 
@@ -75,6 +97,11 @@
 		color: #cfcaf0;
 		margin-bottom: 0;
 	}
+	.latest-grid {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: var(--space-lg);
+	}
 	.home-card {
 		background-color: var(--surface);
 		border: 1px solid var(--border);
@@ -107,6 +134,12 @@
 	.home-card p:last-child {
 		margin-bottom: 0;
 	}
+	.latest-link {
+		display: inline-block;
+		margin-top: var(--space-lg);
+		font-family: var(--font-heading);
+		font-weight: 600;
+	}
 	.button-group {
 		display: flex;
 		gap: var(--space-md);
@@ -130,5 +163,17 @@
 		background-color: var(--accent);
 		color: var(--on-accent);
 		transform: translateY(-2px);
+	}
+
+	@media (max-width: 900px) {
+		.latest-grid {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+	}
+
+	@media (max-width: 600px) {
+		.latest-grid {
+			grid-template-columns: 1fr;
+		}
 	}
 </style>

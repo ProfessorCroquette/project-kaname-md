@@ -3,6 +3,7 @@
 	import '@fontsource/lora/700.css';
 	import '@fontsource-variable/inter';
 	import '../app.css';
+	import { asset, resolve } from '$app/paths';
 	import type { Snippet } from 'svelte';
 
 	let { children }: { children: Snippet } = $props();
@@ -10,8 +11,8 @@
 </script>
 
 <header>
-	<a href="/" class="logo-link">
-		<img id="logo" src="/logo1.png" alt="Project Kaname" />
+	<a href={resolve('/')} class="logo-link">
+		<img id="logo" src={asset('logo1.png')} alt="Project Kaname" />
 	</a>
 	<button
 		class="menu-toggle"
@@ -27,10 +28,14 @@
 	</button>
 	<nav id="main-navigation" class:open={menuOpen} aria-label="Main">
 		<ul>
-			<li><a href="/#home" onclick={() => (menuOpen = false)}>Home</a></li>
-			<li><a href="/#about" onclick={() => (menuOpen = false)}>About</a></li>
-			<li><a href="/#contact" onclick={() => (menuOpen = false)}>Contact</a></li>
-			<li><a href="/kaname/analyses" onclick={() => (menuOpen = false)}>Analyses</a></li>
+			<li><a href={resolve('/#home')} onclick={() => (menuOpen = false)}>Home</a></li>
+			<li><a href={resolve('/#about')} onclick={() => (menuOpen = false)}>About</a></li>
+			<li><a href={resolve('/#contact')} onclick={() => (menuOpen = false)}>Contact</a></li>
+			<li>
+				<a href={`${resolve('/kaname/analyses')}/`} onclick={() => (menuOpen = false)}
+					>Analyses</a
+				>
+			</li>
 		</ul>
 	</nav>
 </header>

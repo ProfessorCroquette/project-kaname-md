@@ -1,9 +1,11 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import { analyses } from '../../../lib/analyses';
 
 	const sortedAnalyses = [...analyses].sort(
 		(a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf()
 	);
+	const analysisDetailPath = `${resolve('/kaname/analyses')}/`;
 </script>
 
 <svelte:head>
@@ -23,7 +25,7 @@
 				{#each sortedAnalyses as analysis (analysis.id)}
 					<article class="grid-card">
 						<h2>
-							<a href={`/kaname/analyses/${analysis.id}`}>{analysis.title}</a>
+							<a href={`${analysisDetailPath}${analysis.id}/`}>{analysis.title}</a>
 						</h2>
 						<p class="meta">
 							{new Date(analysis.date).toLocaleDateString()} · {analysis.category}

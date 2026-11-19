@@ -1,4 +1,8 @@
-<section id="home" class="hero">
+<script lang="ts">
+	import { asset } from '$app/paths';
+</script>
+
+<section id="home" class="hero" style={`--hero-image: url("${asset('madoka.gif')}")`}>
 	<h1>There is always a thought that leads to more questions.</h1>
 	<p>
 		Project Kaname is a personal site where I share my philosophical analysis of pieces of media.
@@ -55,7 +59,7 @@
 		padding: var(--space-xl) var(--space-lg);
 		background-color: #0f0c1d;
 		background-image:
-			linear-gradient(rgba(15, 12, 29, 0.7), rgba(15, 12, 29, 0.9)), url('/madoka.gif');
+			linear-gradient(rgba(15, 12, 29, 0.7), rgba(15, 12, 29, 0.9)), var(--hero-image);
 		background-size: cover;
 		background-position: center;
 		border-bottom: 1px solid var(--border);

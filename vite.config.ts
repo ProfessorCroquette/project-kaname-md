@@ -26,6 +26,7 @@ const base = getBasePath(process.env.BASE_PATH, process.argv.includes('dev'));
 export default defineConfig({
 	plugins: [
 		mdsvex({
+			extensions: ['.svx', '.md'],
 			heading_ids: true,
 			unwrap_images: true,
 			plugins: [

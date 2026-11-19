@@ -2,9 +2,7 @@
 	import { resolve } from '$app/paths';
 	import { analyses } from '../../../lib/analyses';
 
-	const sortedAnalyses = [...analyses].sort(
-		(a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf()
-	);
+	const sortedAnalyses = analyses;
 	const analysisDetailPath = `${resolve('/kaname/analyses')}/`;
 </script>
 

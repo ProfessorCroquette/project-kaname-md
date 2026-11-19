@@ -33,6 +33,7 @@
 		"@mdsvex/plugin-toc": "next",
 		"@mdsvex/prettier-plugin": "next",
 		"@sveltejs/adapter-auto": "^8.0.1",
+		"@sveltejs/adapter-static": "^4.0.1",
 		"@sveltejs/kit": "^3.2.0",
 		"@sveltejs/vite-plugin-svelte": "^7.3.1",
 		"@types/node": "^24",
